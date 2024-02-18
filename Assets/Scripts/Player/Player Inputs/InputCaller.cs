@@ -10,8 +10,8 @@ public class InputCaller : IGetInput
     }
     public void Execute()
     {
-        input.Movement = Input.GetAxis("Horizontal");
-        input.Fire=Input.GetAxis("Fire");
+        input.Movement = Input.GetAxisRaw("Horizontal");
+        input.Fire=Input.GetAxisRaw("Fire");
         if(input.Movement!=0)input.GetMovementInputKey();
     }
 }

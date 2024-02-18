@@ -3,7 +3,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private GetInput getInput;
-    [SerializeField] private Movement movement;
+    private Movement movement;
     private InputInvoker inputInvoker;
     private void Awake()
     {
