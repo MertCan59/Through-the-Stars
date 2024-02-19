@@ -1,10 +1,10 @@
 using UnityEngine;
-public class GetComponentManager : MonoBehaviour, ICollider, IRigidbody
+public class ComponentManager : MonoBehaviour, ICollider, IRigidbody
 {
     private Rigidbody2D _rigidBody;
     private Collider2D _collider;
 
-    private void Awake()
+    private void Update()
     {
         _collider = GetComponentInChildren<Collider2D>();
         _rigidBody = GetComponentInChildren<Rigidbody2D>();

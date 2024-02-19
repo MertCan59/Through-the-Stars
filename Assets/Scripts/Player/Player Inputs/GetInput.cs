@@ -1,22 +1,15 @@
 using UnityEngine;
 public class GetInput
 {
-    private Movement move;
-
+    private ActivateObjectPool activate;
     public float Movement;
-    public float Fire;
-
-    public GetInput(Movement move)
+    public bool Fire;
+    public GetInput(ActivateObjectPool activate)
     {
-        this.move = move;
+        this.activate = activate;
     }
-
-    public void GetMovementInputKey()
+    public void GetFire()
     {
-        move.Move(Movement);
-    }
-    public void GetFireInputKey()
-    {
-        Debug.Log(Fire);
+        activate.Fire();
     }
 }
