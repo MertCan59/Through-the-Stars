@@ -10,7 +10,7 @@ public class ObjectPool : MonoBehaviour
     public void Start()
     {
         laserPool = new Queue<GameObject>();
-        for (int i = 0; i < POOL_SIZE; i++)
+        for (int i = 0; i <= POOL_SIZE; i++)
         {
             GameObject laser=Instantiate(laserObject,Vector3.zero,Quaternion.identity);
             laser.SetActive(false); 

@@ -4,7 +4,7 @@ public class ComponentManager : MonoBehaviour, ICollider, IRigidbody
     private Rigidbody2D _rigidBody;
     private Collider2D _collider;
 
-    private void Update()
+    private void Awake()
     {
         _collider = GetComponentInChildren<Collider2D>();
         _rigidBody = GetComponentInChildren<Rigidbody2D>();
