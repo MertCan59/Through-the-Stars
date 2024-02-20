@@ -21,6 +21,6 @@ public class MissileCollisionDetector : MonoBehaviour
     }
     private void ReturnToPool()
     {
-        ObjectPool.instance.ReturnToPool(gameObject);
+        MissileObjectPool.instance.ReturnToPool(gameObject);
     }
 }

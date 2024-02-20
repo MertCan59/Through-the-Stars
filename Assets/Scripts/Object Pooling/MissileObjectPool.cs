@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour
+public class MissileObjectPool : MonoBehaviour
 {
-    private Queue<GameObject> laserPool;
-    
     [SerializeField] private Transform laserPosition;
-    [SerializeField] private int POOL_SIZE;
 
-    public static ObjectPool instance;
+    private Queue<GameObject> laserPool;
+    private const int POOL_SIZE=10;
+
+    public static MissileObjectPool instance;
     public GameObject laserObject;
 
     private void Awake()

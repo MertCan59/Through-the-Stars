@@ -1,10 +1,10 @@
 using UnityEngine;
 public class GetInput
 {
-    private ObjectPool objectPool;
+    private MissileObjectPool objectPool;
     public float Movement;
     public bool Fire;
-    public GetInput(ObjectPool objectPool)
+    public GetInput(MissileObjectPool objectPool)
     {
        this.objectPool = objectPool;
     }
