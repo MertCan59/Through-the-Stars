@@ -3,14 +3,14 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private GetInput getInput;
-    [SerializeField] private ActivateObjectPool activate;
+    [SerializeField] private ObjectPool objectPool;
     private InputInvoker inputInvoker;
     private Movement movementScript;
 
 
     private void Awake()
     {
-        getInput = new GetInput(activate);
+        getInput = new GetInput(objectPool);
         inputInvoker = new InputInvoker();
         movementScript = GetComponent<Movement>();
         movementScript.Initialize(getInput);

@@ -5,15 +5,24 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     private Queue<GameObject> laserPool;
-    public GameObject laserObject;
+    
+    [SerializeField] private Transform laserPosition;
     [SerializeField] private int POOL_SIZE;
-    public void Start()
+
+    public static ObjectPool instance;
+    public GameObject laserObject;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+    private void Start()
     {
         laserPool = new Queue<GameObject>();
-        for (int i = 0; i <= POOL_SIZE; i++)
+        for (int i = 0; i < POOL_SIZE; i++)
         {
-            GameObject laser=Instantiate(laserObject,Vector3.zero,Quaternion.identity);
-            laser.SetActive(false); 
+            GameObject laser = Instantiate(laserObject, Vector3.zero, Quaternion.identity);
+            laser.SetActive(false);
             laserPool.Enqueue(laser);
         }
     }
@@ -32,9 +41,14 @@ public class ObjectPool : MonoBehaviour
         laser.SetActive(false);
         laserPool.Enqueue(laser);
     }
-    public IEnumerator DisableLaserAfterDelay(GameObject laser,float delay)
+    public void Fire()
     {
-        yield return new WaitForSeconds(delay);
-        ReturnToPool(laser);
+        GameObject laser=GetLaserFromPool();
+
+        if (laser != null)
+        {
+            laser.transform.position = laserPosition.position;
+            laser.SetActive(true);
+        }
     }
 }

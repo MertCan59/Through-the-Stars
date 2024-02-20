@@ -1,15 +1,15 @@
 using UnityEngine;
 public class GetInput
 {
-    private ActivateObjectPool activate;
+    private ObjectPool objectPool;
     public float Movement;
     public bool Fire;
-    public GetInput(ActivateObjectPool activate)
+    public GetInput(ObjectPool objectPool)
     {
-        this.activate = activate;
+       this.objectPool = objectPool;
     }
     public void GetFire()
     {
-        activate.Fire();
+        objectPool.Fire();
     }
 }

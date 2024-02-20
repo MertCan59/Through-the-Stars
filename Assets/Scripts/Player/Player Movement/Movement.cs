@@ -1,10 +1,12 @@
 using UnityEngine;
 public class Movement : MonoBehaviour
 {
-    private ComponentManager componentManager;
-    public GetInput getInput;
-    private Vector3 direction;
     [SerializeField] private float speed;
+
+    private ComponentManager componentManager;
+    private Vector3 direction;
+
+    public GetInput getInput;
     private void Awake()
     {
         componentManager = GetComponent<ComponentManager>();

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Projectile
+  - Stage
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -12,8 +14,8 @@ TagManager:
   - Missiles
   - Water
   - UI
-  - 
-  - 
+  - Stage
+  - Enemy
   - 
   - 
   - 
