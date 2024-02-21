@@ -18,7 +18,6 @@ public class AsteroidObjectPool : MonoBehaviour
         }
         StartCoroutine(SpawnAsteroid());
     }
-
     private IEnumerator SpawnAsteroid()
     {
         while (true)

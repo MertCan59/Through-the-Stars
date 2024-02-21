@@ -8,7 +8,7 @@ public class MissileCollisionDetector : MonoBehaviour
     {
         _particleSystem = GetComponentInChildren<ParticleSystem>();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (layer == (layer | (1 << collision.gameObject.layer)))
         {

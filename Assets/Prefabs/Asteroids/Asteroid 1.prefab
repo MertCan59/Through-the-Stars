@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8569982182172996930}
   - component: {fileID: 525259126288088872}
   - component: {fileID: 4888899749841745931}
-  - component: {fileID: -1539978675532357990}
   - component: {fileID: 1010576990170458261}
   m_Layer: 0
   m_Name: Asteroid 1
@@ -111,18 +110,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1539978675532357990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4888899749841745930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac420119c74319245bb7096a4f78802e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1010576990170458261
 Rigidbody2D:
   serializedVersion: 4
