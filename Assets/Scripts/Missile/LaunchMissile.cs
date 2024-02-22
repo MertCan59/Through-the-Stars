@@ -1,5 +1,5 @@
 using UnityEngine;
-public class LaunchMissile : MonoBehaviour
+public class LaunchMissile : MonoBehaviour,IProjectile
 {
     private ComponentManager componentManager;
     [SerializeField] private float missileSpeed;
@@ -11,9 +11,9 @@ public class LaunchMissile : MonoBehaviour
     {
         Projectile();
     }
-    private void Projectile()
+    public void Projectile()
     {
-        componentManager.GetRigidbody().MovePosition(componentManager.GetRigidbody().transform.position+
-            new Vector3(0,1,0)*missileSpeed*Time.deltaTime);
+        componentManager.GetRigidbody().MovePosition(componentManager.GetRigidbody().transform.position +
+            new Vector3(0, 1, 0) * missileSpeed * Time.deltaTime);
     }
 }
