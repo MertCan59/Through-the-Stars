@@ -9,9 +9,9 @@ public class MissileCollisionDetector : MonoBehaviour
         _particleSystem = GetComponentInChildren<ParticleSystem>();
         manager = GetComponent<ComponentManager>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(layer == (layer | (1 << collision.gameObject.layer)))Hit(collision);
+        if(layer == (layer | (1 << collision.gameObject.layer)))Hit(collision.collider);
     }
     private void ReturnToPool()
     {
@@ -23,7 +23,7 @@ public class MissileCollisionDetector : MonoBehaviour
         if (takeDamage != null)
         {
             takeDamage.TakeDamage();
-            Invoke(nameof(ReturnToPool), _particleSystem.main.duration);
         }
+        ReturnToPool();
     }
 }

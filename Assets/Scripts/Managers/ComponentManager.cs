@@ -6,11 +6,11 @@ public class ComponentManager : MonoBehaviour, ICollider, IRigidbody
     private void Awake()
     {
         _collider = GetComponentInChildren<Collider2D>();
-        _rigidBody = GetComponentInChildren<Rigidbody2D>();
+        _rigidBody=GetComponentInChildren<Rigidbody2D>();
 
-        if (_collider != null){ Debug.LogWarning("Collider not found"); }
+        if (_collider == null){ Debug.LogWarning("Collider not found"); }
         
-        if(_rigidBody != null ){ Debug.LogWarning("Rigidbdoy not found"); }
+        if(_rigidBody == null ){ Debug.LogWarning("Rigidbdoy not found"); }
     }
     public Collider2D GetCollider()
     {

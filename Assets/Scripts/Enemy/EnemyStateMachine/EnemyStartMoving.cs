@@ -19,6 +19,11 @@ public class EnemyStartMoving : EnemyState
     {
         MoveTowards(movePosition);
     }
+    private Vector3 GetRandomPointBetweenTargets()
+    {
+        Vector3 direction = Vector3.Lerp(targetPosition[0].position, targetPosition[1].position, Random.value);
+        return direction;
+    }
     private void MoveTowards(Vector3 movePosition)
     {
         Vector3 direction = (movePosition-manager.GetRigidbody().transform.position).normalized;
@@ -28,10 +33,5 @@ public class EnemyStartMoving : EnemyState
         {
             EnemyMove.EnemySetState(new EnemyFire(EnemyMove));
         }
-    }
-    private Vector3 GetRandomPointBetweenTargets()
-    {
-        Vector3 direction = Vector3.Lerp(targetPosition[0].position, targetPosition[1].position,Random.value);
-        return direction;
     }
 }

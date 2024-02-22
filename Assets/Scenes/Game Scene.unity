@@ -179,7 +179,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1150
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6353384fe04923e42ab15bd2b0bf3cb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -511,7 +511,7 @@ GameObject:
   m_Layer: 0
   m_Name: Position_x (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -538,7 +538,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 864193998233410380, guid: 86125d7998056704399a2715811cba5e, type: 3}
       propertyPath: m_Constraints
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2103367188555714786, guid: 86125d7998056704399a2715811cba5e, type: 3}
       propertyPath: m_Name
@@ -554,11 +554,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3774674482133038698, guid: 86125d7998056704399a2715811cba5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.05
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 3774674482133038698, guid: 86125d7998056704399a2715811cba5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.53
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 3774674482133038698, guid: 86125d7998056704399a2715811cba5e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -594,28 +594,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4801301711011405977, guid: 86125d7998056704399a2715811cba5e, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5103381678338341748, guid: 86125d7998056704399a2715811cba5e, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5103381678338341748, guid: 86125d7998056704399a2715811cba5e, type: 3}
-      propertyPath: moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5103381678338341748, guid: 86125d7998056704399a2715811cba5e, type: 3}
-      propertyPath: targetPositions.Array.data[0]
-      value: 
-      objectReference: {fileID: 793359097}
-    - target: {fileID: 5103381678338341748, guid: 86125d7998056704399a2715811cba5e, type: 3}
-      propertyPath: targetPositions.Array.data[1]
-      value: 
-      objectReference: {fileID: 1161401979}
     - target: {fileID: 6496210858961793725, guid: 86125d7998056704399a2715811cba5e, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6912111421920755368, guid: 86125d7998056704399a2715811cba5e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912111421920755368, guid: 86125d7998056704399a2715811cba5e, type: 3}
+      propertyPath: targetPositions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912111421920755368, guid: 86125d7998056704399a2715811cba5e, type: 3}
+      propertyPath: targetPositions.Array.data[0]
+      value: 
+      objectReference: {fileID: 793359097}
+    - target: {fileID: 6912111421920755368, guid: 86125d7998056704399a2715811cba5e, type: 3}
+      propertyPath: targetPositions.Array.data[1]
+      value: 
+      objectReference: {fileID: 1161401979}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86125d7998056704399a2715811cba5e, type: 3}
 --- !u!1 &1161401978
@@ -630,7 +630,7 @@ GameObject:
   m_Layer: 0
   m_Name: Position_x (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -820,10 +820,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 5, y: 8}
+  m_Offset: {x: 5.5, y: 7.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -834,7 +834,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.5, y: 1}
+  m_Size: {x: 10, y: 1}
   m_EdgeRadius: 0
 --- !u!1001 &1551651975
 PrefabInstance:

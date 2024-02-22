@@ -13,7 +13,6 @@ public class Flash : MonoBehaviour, IDamageObserver
     }
     private IEnumerator FlashRoutine()
     {
-        yield return new WaitForSeconds(0.005f);
         _spriteRenderer.material = HitMaterial;
         yield return new WaitForSeconds(0.05f);
         _spriteRenderer.material = _originalMaterial;
