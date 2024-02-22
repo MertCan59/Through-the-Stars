@@ -31,13 +31,7 @@ public class EnemyStartMoving : EnemyState
     }
     private Vector3 GetRandomPointBetweenTargets()
     {
-        float direction_x = Random.Range(targetPosition[0].position.x, targetPosition[1].position.x);
-        float direction_y = Random.Range(targetPosition[0].position.y, targetPosition[1].position.y);
-        Vector3 direction = new Vector3(
-            direction_x,
-            direction_y,
-            0f
-            );
+        Vector3 direction = Vector3.Lerp(targetPosition[0].position, targetPosition[1].position,Random.value);
         return direction;
     }
 }
