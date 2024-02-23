@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class GetScore : MonoBehaviour,IEnemyDamageObserver
 {
     [SerializeField] private EnemyScoreSO _enemyScoreSO;
