@@ -5,7 +5,6 @@ using UnityEngine;
 public class AsteroidObjectPool : MonoBehaviour
 {
     private List<GameObject> pooledAsteroids;
-
     public List<GameObject> asteroids;
     void Start()
     {

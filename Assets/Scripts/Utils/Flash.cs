@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-public class Flash : MonoBehaviour, IDamageObserver
+public class Flash : MonoBehaviour, IEnemyDamageObserver
 {
     private Material _originalMaterial;
     private SpriteRenderer _spriteRenderer;

@@ -29,8 +29,9 @@ public class EnemyStartMoving : EnemyState
         Vector3 direction = (movePosition-manager.GetRigidbody().transform.position).normalized;
         manager.GetRigidbody().MovePosition(manager.GetRigidbody().transform.position+direction * moveSpeed*Time.fixedDeltaTime);
         float distance = Vector3.Distance(manager.GetRigidbody().transform.position, movePosition);
-        if (distance<=0.1f)
+        if (distance<=0.2f)
         {
+            manager.GetRigidbody().velocity = Vector3.zero;
             EnemyMove.EnemySetState(new EnemyFire(EnemyMove));
         }
     }

@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 public class EnemyTakeDamage : MonoBehaviour, ITakeDamage
 {
-    private readonly List<IDamageObserver> _damageObservers= new List<IDamageObserver>();
-    public void AddEnemyObserver(IDamageObserver damageObserver)
+    private readonly List<IEnemyDamageObserver> _damageObservers= new List<IEnemyDamageObserver>();
+    public void AddEnemyObserver(IEnemyDamageObserver damageObserver)
     {
         _damageObservers.Add(damageObserver);
     }
-    public void RemoveEnemyObserver(IDamageObserver damageObserver)
+    public void RemoveEnemyObserver(IEnemyDamageObserver damageObserver)
     {
         _damageObservers.Remove(damageObserver);
     }

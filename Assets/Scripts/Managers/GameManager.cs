@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public  int score;
-    public  int lives;
+    public  uint score;
+    public  uint lives;
     private void Awake()
     {
         if(instance == null)
@@ -27,11 +27,11 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+
         NewGame();
     }
     public void NewGame()
     {
-        score = 0;
         lives = 5;
         SceneManager.LoadScene("Game Scene");
     }
@@ -39,8 +39,8 @@ public class GameManager : MonoBehaviour
     {
         lives--;
     }
-    public void IncreaseScore()
+    public void AddScore(uint points)
     {
-        score++;
+        score += points;
     }
 }
