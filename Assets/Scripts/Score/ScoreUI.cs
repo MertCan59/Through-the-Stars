@@ -13,6 +13,6 @@ public class ScoreUI : MonoBehaviour, IEnemyDamageObserver
     }
     public void OnDamageTaken()
     {
-        tmp.text = "Score: " + GameManager.instance.score.ToString();
+        tmp.text="Score: "+GameManager.instance.score.ToString();
     }
 }

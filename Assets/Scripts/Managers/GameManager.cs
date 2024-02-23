@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-
         NewGame();
     }
     public void NewGame()
@@ -39,8 +38,9 @@ public class GameManager : MonoBehaviour
     {
         lives--;
     }
-    public void AddScore(uint points)
+    public uint AddScore(uint points)
     {
         score += points;
+        return score;
     }
 }

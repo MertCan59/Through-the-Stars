@@ -16,6 +16,7 @@ public class Flash : MonoBehaviour, IEnemyDamageObserver
         _spriteRenderer.material = HitMaterial;
         yield return new WaitForSeconds(0.05f);
         _spriteRenderer.material = _originalMaterial;
+        
     }
     private void OnEnable()
     {
