@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 public class EnemyMissileObjectPool : MonoBehaviour
 {
@@ -48,11 +48,12 @@ public class EnemyMissileObjectPool : MonoBehaviour
             _missile.SetActive(true);
         }
     }
-    public void EnemyTwoMissile()
+
+    public void EnemyTwoMissiles()
     {
-        GameObject _missile1= GetEnemyMissileFromPool();
-        GameObject _missile2= GetEnemyMissileFromPool();
-        if (_missile1 != null && _missile2!=null)
+        GameObject _missile1 = GetEnemyMissileFromPool();
+        GameObject _missile2 = GetEnemyMissileFromPool();
+        if (_missile1 != null && _missile2 != null)
         {
             _missile1.transform.position = twoMissilesPosition[0].position;
             _missile2.transform.position = twoMissilesPosition[1].position;

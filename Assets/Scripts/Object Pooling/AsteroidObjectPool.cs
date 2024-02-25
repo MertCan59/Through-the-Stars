@@ -33,7 +33,6 @@ public class AsteroidObjectPool : MonoBehaviour
             ReturnToAsteriodPool(asteroid);
         }
     }
-
     public GameObject GetAsteroidsFromPool()
     {
         if (pooledAsteroids.Count == 0)

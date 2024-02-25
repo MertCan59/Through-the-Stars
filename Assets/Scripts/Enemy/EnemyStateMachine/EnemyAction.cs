@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class EnemyAction : EnemyStateMachine
 {
     public EnemyMissileObjectPool enemyPool;

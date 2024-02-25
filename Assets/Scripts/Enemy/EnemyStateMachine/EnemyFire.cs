@@ -4,6 +4,8 @@ public class EnemyFire : EnemyState
 {
     ComponentManager manager;
     EnemyMissileObjectPool pool;
+    float fireInterval = 0.5f;
+    float lastFireTime;
     public EnemyFire(EnemyAction enemyAction) : base(enemyAction)
     {
     }
@@ -37,11 +39,19 @@ public class EnemyFire : EnemyState
 
     private void LaunchOneMissile()
     {
-        pool.EnemyOneMissile();
+        if (Time.time - lastFireTime > fireInterval)
+        {
+            pool.EnemyOneMissile();
+            lastFireTime = Time.time;
+        }
     }
     private void LaunchTwoMissiles()
     {
-        pool.EnemyTwoMissile();
+        if (Time.time - lastFireTime > fireInterval)
+        {
+            pool.EnemyTwoMissiles();
+            lastFireTime = Time.time;
+        }
     }
     private void SetCurrentState()
     {
