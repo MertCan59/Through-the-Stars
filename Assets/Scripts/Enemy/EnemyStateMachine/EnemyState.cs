@@ -1,8 +1,8 @@
 public abstract class EnemyState
 {
-    public EnemyMove EnemyMove;
+    public EnemyAction EnemyMove;
 
-    public EnemyState(EnemyMove enemyMove)
+    public EnemyState(EnemyAction enemyMove)
     {
         EnemyMove = enemyMove;
         

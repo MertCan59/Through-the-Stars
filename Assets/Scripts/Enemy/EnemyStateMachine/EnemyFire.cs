@@ -3,7 +3,7 @@
 internal class EnemyFire : EnemyState
 {
     ComponentManager manager;
-    public EnemyFire(EnemyMove enemyMove) : base(enemyMove)
+    public EnemyFire(EnemyAction enemyMove) : base(enemyMove)
     {
     }
     public override void OnEnter()

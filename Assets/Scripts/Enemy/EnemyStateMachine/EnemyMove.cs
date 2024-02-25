@@ -1,19 +1,38 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemyMove : EnemyStateMachine
+public class EnemyMove : EnemyState
 {
-    public float moveSpeed;
-    public Transform[] targetPositions;
-    public ComponentManager manager;
-
-    private void Start()
+    private ComponentManager manager;
+    private Transform[] targetPosition;
+    private Vector3 movePosition;
+    private float moveSpeed;
+    public EnemyMove(EnemyAction enemyMove) : base(enemyMove)
+    {}
+    public override void OnEnter()
     {
-        manager = GetComponent<ComponentManager>();
-        EnemySetState(new EnemyStartMoving(this));
-        CurrentEnemyState.OnEnter();
+        manager = EnemyMove.manager;
+        targetPosition = EnemyMove.targetPositions;
+        movePosition = GetRandomPointBetweenTargets();
+        moveSpeed = EnemyMove.moveSpeed;
     }
-    private void FixedUpdate()
+    public override void OnUpdate()
     {
-        CurrentEnemyState.OnUpdate();
+        MoveTowards(movePosition);
+    }
+    private Vector3 GetRandomPointBetweenTargets()
+    {
+        Vector3 direction = Vector3.Lerp(targetPosition[0].position, targetPosition[1].position, Random.value);
+        return direction;
+    }
+    private void MoveTowards(Vector3 movePosition)
+    {
+        Vector3 direction = (movePosition-manager.GetRigidbody().transform.position).normalized;
+        manager.GetRigidbody().MovePosition(manager.GetRigidbody().transform.position+direction * moveSpeed*Time.fixedDeltaTime);
+        float distance = Vector3.Distance(manager.GetRigidbody().transform.position, movePosition);
+        if (distance<=0.2f)
+        {
+            manager.GetRigidbody().velocity = Vector3.zero;
+            EnemyMove.EnemySetState(new EnemyFire(EnemyMove));
+        }
     }
 }
