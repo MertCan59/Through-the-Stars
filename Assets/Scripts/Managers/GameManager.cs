@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public  uint score;
-    public  uint lives;
+    public  int lives;
     private void Awake()
     {
         if(instance == null)
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     }
     public void NewGame()
     {
-        lives = 5;
+        lives = 3;
         SceneManager.LoadScene("Game Scene");
     }
     public void GetDamage()

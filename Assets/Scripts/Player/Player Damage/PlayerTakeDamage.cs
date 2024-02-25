@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerTakeDamage : MonoBehaviour, ITakeDamage
 {
     private readonly List<IPlayerDamageObserver>_damageObservers = new List<IPlayerDamageObserver>();
-    public void AddEnemyObserver(IPlayerDamageObserver damageObserver)
+    public void AddPlayerObserver(IPlayerDamageObserver damageObserver)
     {
         _damageObservers.Add(damageObserver);
     }
-    public void RemoveEnemyObserver(IPlayerDamageObserver damageObserver)
+    public void RemovePlayerObserver(IPlayerDamageObserver damageObserver)
     {
         _damageObservers.Remove(damageObserver);
     }

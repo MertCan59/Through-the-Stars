@@ -4,7 +4,7 @@ public class EnemyFire : EnemyState
 {
     ComponentManager manager;
     EnemyMissileObjectPool pool;
-    float fireInterval = 0.5f;
+    float fireInterval = 0.75f;
     float lastFireTime;
     public EnemyFire(EnemyAction enemyAction) : base(enemyAction)
     {

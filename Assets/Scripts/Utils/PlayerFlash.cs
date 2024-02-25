@@ -20,12 +20,11 @@ public class PlayerFlash : MonoBehaviour, IPlayerDamageObserver
     }
     private void OnEnable()
     {
-        FindObjectOfType<PlayerTakeDamage>()?.AddEnemyObserver(this);
-
+        FindObjectOfType<PlayerTakeDamage>()?.AddPlayerObserver(this);
     }
     private void OnDisable()
     {
-        FindObjectOfType<PlayerTakeDamage>()?.RemoveEnemyObserver(this);
+        FindObjectOfType<PlayerTakeDamage>()?.RemovePlayerObserver(this);
     }
     public void PlayerOnDamage()
     {
