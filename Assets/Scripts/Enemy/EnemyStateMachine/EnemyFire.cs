@@ -28,7 +28,6 @@ public class EnemyFire : EnemyState
         {
             fireState = FireState.TwoMissiles;
         }
-        pool.EnemyOneMissile();
     }
     public override void OnUpdate()
     {
@@ -38,11 +37,11 @@ public class EnemyFire : EnemyState
 
     private void LaunchOneMissile()
     {
-        Debug.Log("Launched 1 Missile");
+        pool.EnemyOneMissile();
     }
     private void LaunchTwoMissiles()
     {
-        Debug.Log("Launched 2 Missiles");
+        pool.EnemyTwoMissile();
     }
     private void SetCurrentState()
     {

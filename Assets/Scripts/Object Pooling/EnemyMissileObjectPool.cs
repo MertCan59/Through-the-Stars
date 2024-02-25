@@ -48,4 +48,16 @@ public class EnemyMissileObjectPool : MonoBehaviour
             _missile.SetActive(true);
         }
     }
+    public void EnemyTwoMissile()
+    {
+        GameObject _missile1= GetEnemyMissileFromPool();
+        GameObject _missile2= GetEnemyMissileFromPool();
+        if (_missile1 != null && _missile2!=null)
+        {
+            _missile1.transform.position = twoMissilesPosition[0].position;
+            _missile2.transform.position = twoMissilesPosition[1].position;
+            _missile1.SetActive(true);
+            _missile2.SetActive(true);
+        }
+    }
 }
