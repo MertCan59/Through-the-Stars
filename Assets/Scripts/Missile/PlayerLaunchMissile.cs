@@ -1,5 +1,5 @@
 using UnityEngine;
-public class LaunchMissile : MonoBehaviour,IProjectile
+public class PlayerLaunchMissile : MonoBehaviour,IProjectile
 {
     private ComponentManager componentManager;
     [SerializeField] private float missileSpeed;

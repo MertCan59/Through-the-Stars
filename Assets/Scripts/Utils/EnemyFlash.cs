@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-public class Flash : MonoBehaviour, IEnemyDamageObserver
+public class EnemyFlash : MonoBehaviour, IEnemyDamageObserver
 {
     private Material _originalMaterial;
     private SpriteRenderer _spriteRenderer;
@@ -21,6 +21,7 @@ public class Flash : MonoBehaviour, IEnemyDamageObserver
     private void OnEnable()
     {
         FindObjectOfType<EnemyTakeDamage>()?.AddEnemyObserver(this);
+
     }
     private void OnDisable()
     {

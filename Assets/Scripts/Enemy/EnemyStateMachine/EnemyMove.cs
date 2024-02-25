@@ -6,14 +6,14 @@ public class EnemyMove : EnemyState
     private Transform[] targetPosition;
     private Vector3 movePosition;
     private float moveSpeed;
-    public EnemyMove(EnemyAction enemyMove) : base(enemyMove)
+    public EnemyMove(EnemyAction enemyAction) : base(enemyAction)
     {}
     public override void OnEnter()
     {
-        manager = EnemyMove.manager;
-        targetPosition = EnemyMove.targetPositions;
+        manager = EnemyAction.manager;
+        targetPosition = EnemyAction.targetPositions;
         movePosition = GetRandomPointBetweenTargets();
-        moveSpeed = EnemyMove.moveSpeed;
+        moveSpeed = EnemyAction.moveSpeed;
     }
     public override void OnUpdate()
     {
@@ -32,7 +32,7 @@ public class EnemyMove : EnemyState
         if (distance<=0.2f)
         {
             manager.GetRigidbody().velocity = Vector3.zero;
-            EnemyMove.EnemySetState(new EnemyFire(EnemyMove));
+            EnemyAction.EnemySetState(new EnemyFire(EnemyAction));
         }
     }
 }

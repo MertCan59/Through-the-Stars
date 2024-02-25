@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyAction : EnemyStateMachine
 {
+    public EnemyMissileObjectPool enemyPool;
     public float moveSpeed;
     public Transform[] targetPositions;
     public ComponentManager manager;

@@ -1,10 +1,10 @@
 public abstract class EnemyState
 {
-    public EnemyAction EnemyMove;
+    public EnemyAction EnemyAction;
 
     public EnemyState(EnemyAction enemyMove)
     {
-        EnemyMove = enemyMove;
+        EnemyAction = enemyMove;
         
     }
     public virtual void OnEnter(){ }

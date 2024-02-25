@@ -1,21 +1,14 @@
 using UnityEngine;
-public class MissileCollisionDetector : MonoBehaviour
+public class PlayerMissileCollisionDetector : MonoBehaviour
 {
     [SerializeField] private LayerMask layer;
-    private ParticleSystem _particleSystem;
-    private ComponentManager manager;
-    private void Awake()
-    {
-        _particleSystem = GetComponentInChildren<ParticleSystem>();
-        manager = GetComponent<ComponentManager>();
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(layer == (layer | (1 << collision.gameObject.layer)))Hit(collision.collider);
     }
     private void ReturnToPool()
     {
-        MissileObjectPool.instance.ReturnToPool(gameObject);
+        PlayerMissileObjectPool.instance.ReturnToPlayerPool(gameObject);
     }
     private void Hit(Collider2D collision)
     {

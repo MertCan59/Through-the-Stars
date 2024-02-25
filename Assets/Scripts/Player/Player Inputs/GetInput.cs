@@ -1,15 +1,15 @@
 using UnityEngine;
 public class GetInput
 {
-    private MissileObjectPool objectPool;
+    private PlayerMissileObjectPool objectPool;
     public float Movement;
     public bool Fire;
-    public GetInput(MissileObjectPool objectPool)
+    public GetInput(PlayerMissileObjectPool objectPool)
     {
        this.objectPool = objectPool;
     }
     public void GetFire()
     {
-        objectPool.Fire();
+        objectPool.PlayerFire();
     }
 }

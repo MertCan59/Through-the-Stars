@@ -3,7 +3,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private GetInput getInput;
-    [SerializeField] private MissileObjectPool objectPool;
+    [SerializeField] private PlayerMissileObjectPool objectPool;
     private InputInvoker inputInvoker;
     private Movement movementScript;
 
