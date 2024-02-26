@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
+
 public class PlayerDecreaseHP : MonoBehaviour, IPlayerDamageObserver
 {
-    [SerializeField] private GameObject[] hp;
+    [SerializeField] private EnemyScoreSO _enemyScoreSO;
+    [SerializeField] private Slider slider;
     private void OnEnable()
     {
         FindObjectOfType<PlayerTakeDamage>()?.AddPlayerObserver(this);
@@ -12,7 +15,7 @@ public class PlayerDecreaseHP : MonoBehaviour, IPlayerDamageObserver
     }
     public void PlayerOnDamage()
     {
-        GameManager.instance.GetDamage();
-        Destroy(hp[GameManager.instance.lives]);
+        GameManager.instance.GetDamage(_enemyScoreSO.Power);
+        slider.value = GameManager.instance.hp;
     }
 }

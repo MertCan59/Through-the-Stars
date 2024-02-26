@@ -13,7 +13,7 @@ public class PlayerDied : MonoBehaviour, IPlayerDamageObserver
     }
     public void PlayerOnDamage()
     {
-        if(GameManager.instance.lives==0)isDead=true;
+        if(GameManager.instance.hp==0)isDead=true;
         DiedController();
     }
     private void DiedController()
