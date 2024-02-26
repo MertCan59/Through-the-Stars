@@ -7,7 +7,7 @@ public class EnemyFlash : MonoBehaviour, IEnemyDamageObserver
     public Material HitMaterial;
     private void Awake()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _originalMaterial = _spriteRenderer.material;
         HitMaterial = new Material(HitMaterial);
     }
@@ -21,13 +21,16 @@ public class EnemyFlash : MonoBehaviour, IEnemyDamageObserver
     private void OnEnable()
     {
         FindObjectOfType<EnemyTakeDamage>()?.AddEnemyObserver(this);
-
     }
     private void OnDisable()
     {
         FindObjectOfType<EnemyTakeDamage>()?.RemoveEnemyObserver(this);
     }
     public void OnDamageTaken()
+    {
+        OnDamageTaken(5);
+    }
+    public void OnDamageTaken(int a)
     {
         StartCoroutine(FlashRoutine());
     }

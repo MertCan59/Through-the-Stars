@@ -161,8 +161,8 @@ GameObject:
   - component: {fileID: 4578318707179335244}
   - component: {fileID: 4454463486389258408}
   - component: {fileID: 4208093189702743081}
-  - component: {fileID: 5184703696722678136}
   - component: {fileID: 2892209436732512000}
+  - component: {fileID: 8453800205805598392}
   - component: {fileID: 4578318707179335245}
   - component: {fileID: 8231780298831733093}
   - component: {fileID: 2845219610727076366}
@@ -214,19 +214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitMaterial: {fileID: 2100000, guid: abddc471beb99b444b633d979d4ce5d9, type: 2}
---- !u!114 &5184703696722678136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4578318707179335250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4acfa51e997de545b7f5cb704257695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: []
 --- !u!114 &2892209436732512000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +227,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
+--- !u!114 &8453800205805598392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4578318707179335250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4acfa51e997de545b7f5cb704257695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyPowerSO: {fileID: 11400000, guid: 116695ec62085e84c935c7e7ac24f443, type: 2}
+  slider: {fileID: 2742097708825545093}
 --- !u!212 &4578318707179335245
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -418,14 +419,14 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 9222252110482506421}
   m_FillRect: {fileID: 1361338871256397422}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1300
-  m_WholeNumbers: 0
-  m_Value: 1300
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -534,7 +535,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: -1}
-  m_SizeDelta: {x: 200, y: 40}
+  m_SizeDelta: {x: 200, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2423034239148998837
 Canvas:

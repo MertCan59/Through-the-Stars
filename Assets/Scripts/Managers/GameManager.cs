@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public  uint score;
     public  int hp;
+    public Slider slider;
     private void Awake()
     {
         if(instance == null)
@@ -31,12 +33,13 @@ public class GameManager : MonoBehaviour
     }
     public void NewGame()
     {
-        hp = 1300;
+        hp = ((int)slider.maxValue);
         SceneManager.LoadScene("Game Scene");
     }
-    public void GetDamage(int damage)
+    public int GetDamage(int damage)
     {
-        hp=-damage;
+        hp=hp-damage;
+        return hp;
     }
     public uint AddScore(uint points)
     {
