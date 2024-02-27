@@ -26,10 +26,8 @@ public class DecreaseHP : MonoBehaviour, IPlayerDamageObserver
         playerHP -= enemyCreate.GetEnemyPower();
         UpdateSlider();
     }
-
     private void UpdateSlider()
     {
         slider.value = playerHP;
-        Debug.Log(enemyCreate.GetEnemyPower());
     }
 } 
