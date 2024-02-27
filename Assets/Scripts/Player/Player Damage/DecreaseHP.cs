@@ -23,7 +23,7 @@ public class DecreaseHP : MonoBehaviour, IPlayerDamageObserver
     public void PlayerOnDamage()
     {
         int enemypower = enemyCreate.GetEnemyPower();
-        playerHP -= GameManager.instance.power;
+        playerHP -= enemyCreate.GetEnemyPower();
         UpdateSlider();
     }
 
