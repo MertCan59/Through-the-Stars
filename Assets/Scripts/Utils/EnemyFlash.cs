@@ -16,21 +16,16 @@ public class EnemyFlash : MonoBehaviour, IEnemyDamageObserver
         _spriteRenderer.material = HitMaterial;
         yield return new WaitForSeconds(0.05f);
         _spriteRenderer.material = _originalMaterial;
-        
     }
     private void OnEnable()
     {
-        FindObjectOfType<EnemyTakeDamage>()?.AddEnemyObserver(this);
+        GetComponent<EnemyTakeDamage>().AddEnemyObserver((this));
     }
     private void OnDisable()
     {
-        FindObjectOfType<EnemyTakeDamage>()?.RemoveEnemyObserver(this);
+        GetComponent<EnemyTakeDamage>().RemoveEnemyObserver((this));
     }
     public void OnDamageTaken()
-    {
-        OnDamageTaken(5);
-    }
-    public void OnDamageTaken(int a)
     {
         StartCoroutine(FlashRoutine());
     }

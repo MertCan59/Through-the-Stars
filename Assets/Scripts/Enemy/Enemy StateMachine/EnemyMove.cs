@@ -31,7 +31,6 @@ public class EnemyMove : EnemyState
         float distance = Vector3.Distance(manager.GetRigidbody().transform.position, movePosition);
         if (distance<=0.2f)
         {
-            manager.GetRigidbody().velocity = Vector3.zero;
             EnemyAction.EnemySetState(new EnemyFire(EnemyAction));
         }
     }

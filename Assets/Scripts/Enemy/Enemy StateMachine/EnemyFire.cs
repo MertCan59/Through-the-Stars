@@ -6,6 +6,7 @@ public class EnemyFire : EnemyState
     EnemyMissileObjectPool pool;
     float fireInterval = 0.75f;
     float lastFireTime;
+    EnemyFactory factory;
     public EnemyFire(EnemyAction enemyAction) : base(enemyAction)
     {
     }
@@ -18,6 +19,9 @@ public class EnemyFire : EnemyState
     protected FireState fireState;
     public override void OnEnter()
     {
+        Debug.Log("Entered OnFire");
+        factory = EnemyAction.enemyFactory;
+        factory.isAttacking = true;
         manager = EnemyAction.manager;
         manager.GetCollider().isTrigger = false;
         manager.GetRigidbody().constraints = RigidbodyConstraints2D.FreezeAll;

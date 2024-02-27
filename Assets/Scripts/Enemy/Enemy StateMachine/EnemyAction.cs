@@ -5,7 +5,7 @@ public class EnemyAction : EnemyStateMachine
     public float moveSpeed;
     public Transform[] targetPositions;
     public ComponentManager manager;
-
+    public EnemyFactory enemyFactory;
     private void Start()
     {
         manager = GetComponent<ComponentManager>();

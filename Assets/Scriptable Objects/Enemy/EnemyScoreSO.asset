@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5c841c67c0c4e41ac67f70db21ca67, type: 3}
   m_Name: EnemyScoreSO
   m_EditorClassIdentifier: 
-  <Score>k__BackingField: 125
-  <Power>k__BackingField: 31
-  <Name>k__BackingField: Az1l
+  <Score>k__BackingField: 0

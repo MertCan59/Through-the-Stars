@@ -5,6 +5,5 @@ using UnityEngine;
     )]
 public class EnemyPowerSO : ScriptableObject
 {
-    public int Power = 100;
-    public string Name;
+    public int Power;
 }

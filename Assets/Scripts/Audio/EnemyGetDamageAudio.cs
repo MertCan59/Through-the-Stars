@@ -10,11 +10,11 @@ public class EnemyGetDamageAudio : MonoBehaviour,IEnemyDamageObserver
     }
     private void OnEnable()
     {
-        FindObjectOfType<EnemyTakeDamage>()?.AddEnemyObserver(this);
+        GetComponent<EnemyTakeDamage>().AddEnemyObserver((this));
     }
     private void OnDisable()
     {
-        FindObjectOfType<EnemyTakeDamage>()?.RemoveEnemyObserver(this);
+        GetComponent<EnemyTakeDamage>().RemoveEnemyObserver((this)); ;
     }
     public void OnDamageTaken()
     {

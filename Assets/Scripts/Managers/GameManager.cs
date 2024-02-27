@@ -1,3 +1,4 @@
+using System.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public  uint score;
     public  int hp;
+    public int power;
     public Slider slider;
     private void Awake()
     {
@@ -47,3 +49,4 @@ public class GameManager : MonoBehaviour
         return score;
     }
 }
+
