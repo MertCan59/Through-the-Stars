@@ -76,6 +76,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 320
+  missileType: 0
 --- !u!212 &4787090601638135405
 SpriteRenderer:
   m_ObjectHideFlags: 0

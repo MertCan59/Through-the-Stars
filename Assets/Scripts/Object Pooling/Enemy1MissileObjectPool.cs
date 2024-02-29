@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-public class EnemyMissileObjectPool : MonoBehaviour
+public class Enemy1MissileObjectPool : MonoBehaviour
 {
     [SerializeField] private Transform oneMissilePosition;
     [SerializeField] private Transform[] twoMissilesPosition;
     private Queue<GameObject> enemyMissilePool;
     private const int POOL_SIZE = 10;
 
-    public static EnemyMissileObjectPool Instance;
+    public static Enemy1MissileObjectPool Instance;
     public GameObject enemyMissile;
 
     private void Awake()
@@ -24,7 +24,7 @@ public class EnemyMissileObjectPool : MonoBehaviour
             enemyMissilePool.Enqueue(_enemyMissile);
         }
     }
-    public GameObject GetEnemyMissileFromPool()
+    public GameObject GetEnemy1MissileFromPool()
     {
         if(enemyMissilePool.Count > 0)
         {
@@ -34,14 +34,14 @@ public class EnemyMissileObjectPool : MonoBehaviour
         }
         return null;
     }
-    public void ReturnToEnemyPool(GameObject enemyMissile)
+    public void ReturnToEnemy1Pool(GameObject enemyMissile)
     {
         enemyMissile.SetActive(false);
         enemyMissilePool.Enqueue(enemyMissile);
     }
-    public void EnemyOneMissile()
+    public void Enemy1OneMissile()
     {
-        GameObject _missile = GetEnemyMissileFromPool();
+        GameObject _missile = GetEnemy1MissileFromPool();
         if (_missile != null)
         {
             _missile.transform.position = oneMissilePosition.position;
@@ -49,10 +49,10 @@ public class EnemyMissileObjectPool : MonoBehaviour
         }
     }
 
-    public void EnemyTwoMissiles()
+    public void Enemy1TwoMissiles()
     {
-        GameObject _missile1 = GetEnemyMissileFromPool();
-        GameObject _missile2 = GetEnemyMissileFromPool();
+        GameObject _missile1 = GetEnemy1MissileFromPool();
+        GameObject _missile2 = GetEnemy1MissileFromPool();
         if (_missile1 != null && _missile2 != null)
         {
             _missile1.transform.position = twoMissilesPosition[0].position;

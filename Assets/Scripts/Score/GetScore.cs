@@ -16,3 +16,4 @@ public class GetScore : MonoBehaviour,IEnemyDamageObserver
         GameManager.instance.AddScore(_enemyScoreSO.Score);
     }
 }
+    

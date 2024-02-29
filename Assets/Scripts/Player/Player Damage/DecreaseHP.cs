@@ -3,10 +3,9 @@ using UnityEngine.UI;
 
 public class DecreaseHP : MonoBehaviour, IPlayerDamageObserver
 {
+    private int playerHP;
     [SerializeField] private Slider slider;
     [SerializeField] private EnemyCreate enemyCreate;
-
-    private int playerHP;
 
     private void Start()
     {
@@ -22,7 +21,6 @@ public class DecreaseHP : MonoBehaviour, IPlayerDamageObserver
     }
     public void PlayerOnDamage()
     {
-        int enemypower = enemyCreate.GetEnemyPower();
         playerHP -= enemyCreate.GetEnemyPower();
         UpdateSlider();
     }

@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class EnemyAlien2 : MonoBehaviour, IEnemy
+public class AlienEnemy : MonoBehaviour, IEnemy
 {
     [SerializeField] EnemyPowerSO enemyPower;
-    public int Power { get => enemyPower.Power; set => enemyPower.Power = value; }
+    public int Power { get => enemyPower.Power; set => enemyPower.Power= value; }
 
     public int EnemyPower()
     {

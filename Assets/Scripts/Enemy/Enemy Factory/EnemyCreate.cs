@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class EnemyCreate : MonoBehaviour
 {
-    [SerializeField] EnemyMissileObjectPool missileObjectPool;
     [System.Serializable]
     public struct EnemyPower 
     {
@@ -31,7 +30,7 @@ public class EnemyCreate : MonoBehaviour
             enemyDict.Add(power.power.Power,power.factory);
         }
     }
-    private void AttackToPlayer(EnemyFactory enemy)
+    public void AttackToPlayer(EnemyFactory enemy)
     {
         IEnemy _enemy = enemy.GetEnemy();
         _enemy.EnemyPower();

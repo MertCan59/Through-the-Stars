@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-public class Alien1Creator : EnemyFactory
+public class AlienCreator : EnemyFactory
 {
-    [SerializeField] private EnemyAlien1 enemy1;
+    [SerializeField] private AlienEnemy enemy1;
     public override IEnemy GetEnemy()
     {
-        EnemyAlien1 enemy = enemy1;
+        AlienEnemy enemy = enemy1;
         return enemy;
     }
     public override int GetEnemyPower()

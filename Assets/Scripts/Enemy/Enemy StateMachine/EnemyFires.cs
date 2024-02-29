@@ -1,31 +1,18 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class EnemyFire : EnemyState
+public class EnemyFires : State
 {
-    ComponentManager manager;
-    EnemyMissileObjectPool pool;
-    float fireInterval = 0.75f;
-    float lastFireTime;
-    EnemyFactory factory;
-    public EnemyFire(EnemyAction enemyAction) : base(enemyAction)
+    public EnemyFires(EnemyTakeAction enemyTakeAction, StateMachine stateMachine) : base(enemyTakeAction, stateMachine)
     {
     }
-    protected enum FireState
-    {
-        OneMissile,
-        TwoMissiles,
-        Dead
-    }
-    protected FireState fireState;
+    private float fireInterval = 0.75f;
+    private float lastFireTime;
+
+    #region main
     public override void OnEnter()
     {
-        Debug.Log("Entered OnFire");
-        factory = EnemyAction.enemyFactory;
-        factory.isAttacking = true;
-        manager = EnemyAction.manager;
-        manager.GetCollider().isTrigger = false;
-        manager.GetRigidbody().constraints = RigidbodyConstraints2D.FreezeAll;
-        pool = EnemyAction.enemyPool;
+        base.OnEnter();
+        Debug.Log("Enemy is fire");
         if (Random.Range(0f, 1f) < 0.5f)
         {
             fireState = FireState.OneMissile;
@@ -35,17 +22,33 @@ public class EnemyFire : EnemyState
             fireState = FireState.TwoMissiles;
         }
     }
-    public override void OnUpdate()
+    public override void OnExit()
     {
+        base.OnExit();
+    }
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+    }
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
         SetCurrentState();
     }
-    public override void OnExit() { }
-
+    #endregion
+    
+    private enum FireState
+    {
+        OneMissile,
+        TwoMissiles,
+        Dead
+    }
+    private FireState fireState;
     private void LaunchOneMissile()
     {
         if (Time.time - lastFireTime > fireInterval)
         {
-            pool.EnemyOneMissile();
+            enemyTakeAction.enemy1Pool.Enemy1OneMissile();
             lastFireTime = Time.time;
         }
     }
@@ -53,7 +56,7 @@ public class EnemyFire : EnemyState
     {
         if (Time.time - lastFireTime > fireInterval)
         {
-            pool.EnemyTwoMissiles();
+            enemyTakeAction.enemy1Pool.Enemy1TwoMissiles();
             lastFireTime = Time.time;
         }
     }
