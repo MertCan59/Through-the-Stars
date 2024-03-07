@@ -19,18 +19,18 @@ public class Enemy2MissileObjectPool : MonoBehaviour
         missileObject = new Queue<GameObject>();
         for(int i=0; i<missileCount; i++)
         {
-            GameObject _enemyMissile = Instantiate(E2_missiles, Vector3.zero, Quaternion.identity);
-            _enemyMissile.SetActive(false);
-            missileObject.Enqueue(_enemyMissile);
+            GameObject enemyMissile = Instantiate(E2_missiles, Vector3.zero, Quaternion.identity);
+            enemyMissile.SetActive(false);
+            missileObject.Enqueue(enemyMissile);
         }
     }
     public GameObject GetEnemy2MissileFromPool()
     {
         if (missileObject.Count > 0)
         {
-            GameObject _missile = missileObject.Dequeue();
-            _missile.SetActive(true);
-            return _missile;
+            GameObject missile = missileObject.Dequeue();
+            missile.SetActive(true);
+            return missile;
         }
         return null;
     }
@@ -41,11 +41,11 @@ public class Enemy2MissileObjectPool : MonoBehaviour
     }
     public void Enemy2OneMissile()
     {
-        GameObject _missile = GetEnemy2MissileFromPool();
-        if (_missile != null)
+        GameObject missile = GetEnemy2MissileFromPool();
+        if (missile != null)
         {
-            _missile.transform.position = missileTransform.position;
-            _missile.SetActive(true);
+            missile.transform.position = missileTransform.position;
+            missile.SetActive(true);
         }
     }
 }

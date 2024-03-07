@@ -5,8 +5,6 @@ public class DecreaseHP : MonoBehaviour, IPlayerDamageObserver
 {
     private int playerHP;
     [SerializeField] private Slider slider;
-    [SerializeField] private EnemyCreate enemyCreate;
-
     private void Start()
     {
         playerHP = GameManager.instance.hp;
@@ -21,7 +19,6 @@ public class DecreaseHP : MonoBehaviour, IPlayerDamageObserver
     }
     public void PlayerOnDamage()
     {
-        playerHP -= enemyCreate.GetEnemyPower();
         UpdateSlider();
     }
     private void UpdateSlider()

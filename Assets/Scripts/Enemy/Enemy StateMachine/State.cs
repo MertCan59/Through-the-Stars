@@ -2,16 +2,15 @@ using UnityEngine;
 
 public abstract class State 
 {
-    protected EnemyTakeAction enemyTakeAction;
-    protected StateMachine enemyStateMachine;
-    public State(EnemyTakeAction enemyTakeAction, StateMachine StateMachine)
+    protected EnemyAction EnemyAction;
+    protected StateMachine EnemyStateMachine;
+    public State(EnemyAction enemyAction, StateMachine enemyStateMachine)
     {
-        this.enemyTakeAction = enemyTakeAction;
-        this.enemyStateMachine = StateMachine;
+        this.EnemyAction = enemyAction;
+        this.EnemyStateMachine = enemyStateMachine;
     }
     public virtual void OnEnter() { }
     public virtual void LogicUpdate() { }
     public virtual void PhysicsUpdate() { }
     public virtual void OnExit() { }
-
 }

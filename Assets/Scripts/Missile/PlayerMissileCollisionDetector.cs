@@ -4,7 +4,7 @@ public class PlayerMissileCollisionDetector : MonoBehaviour
     [SerializeField] private LayerMask layer;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(layer == (layer | (1 << collision.gameObject.layer)))Hit(collision.collider);
+        if (layer == (layer | (1 << collision.gameObject.layer))) Hit(collision.collider);
     }
     private void ReturnToPool()
     {

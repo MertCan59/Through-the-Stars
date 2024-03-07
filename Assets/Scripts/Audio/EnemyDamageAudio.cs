@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyGetDamageAudio : MonoBehaviour,IEnemyDamageObserver
+public class EnemyDamageAudio : MonoBehaviour,IEnemyDamageObserver
 {
     private AudioSource source;
     private void Awake()
@@ -10,11 +10,11 @@ public class EnemyGetDamageAudio : MonoBehaviour,IEnemyDamageObserver
     }
     private void OnEnable()
     {
-        GetComponent<EnemyTakeDamage>().AddEnemyObserver((this));
+        GetComponent<EnemyTakeDamage>().AddEnemyObserver(this);
     }
     private void OnDisable()
     {
-        GetComponent<EnemyTakeDamage>().RemoveEnemyObserver((this)); ;
+        GetComponent<EnemyTakeDamage>().RemoveEnemyObserver(this);
     }
     public void OnDamageTaken()
     {
