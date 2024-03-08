@@ -31,12 +31,13 @@ public class EnemyFire : State
     public override void OnExit()
     {
         base.OnExit();
-        //TODO: add return to pool 
+
     }
     public override void LogicUpdate()
     {
         base.LogicUpdate();
         SetCurrentState();
+        
     }
     #endregion
     

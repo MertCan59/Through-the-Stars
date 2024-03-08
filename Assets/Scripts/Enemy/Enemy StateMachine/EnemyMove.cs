@@ -16,6 +16,7 @@ public class EnemyMove : State
     public override void OnEnter()
     {
         base.OnEnter();
+        Debug.Log("Entered Move State");
         GetRandomPointBetweenTargets();
     }
     public override void OnExit()
@@ -45,4 +46,5 @@ public class EnemyMove : State
             EnemyStateMachine.ChangeState(EnemyAction.EnemyFire);
         }
     }
+
 }

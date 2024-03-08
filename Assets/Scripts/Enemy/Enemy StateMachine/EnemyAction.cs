@@ -6,6 +6,7 @@ public class EnemyAction : MonoBehaviour
     #region variables
     [CanBeNull] public Enemy1MissileObjectPool enemy1Pool;
     [CanBeNull] public Enemy2MissileObjectPool enemy2Pool;
+    [CanBeNull] public EnemyHP hp;
     public float moveSpeed;
     public Transform[] targetPositions;
     public ComponentManager manager;
