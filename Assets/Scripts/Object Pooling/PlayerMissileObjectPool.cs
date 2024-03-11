@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMissileObjectPool : MonoBehaviour
 {
     [SerializeField] private Transform missilePosition;
-
     private Queue<GameObject> playerMissilePool;
     private const int POOL_SIZE=10;
 

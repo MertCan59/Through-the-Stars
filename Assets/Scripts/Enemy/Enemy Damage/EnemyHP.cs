@@ -8,6 +8,7 @@ public class EnemyHP : MonoBehaviour, IEnemyDamageObserver
     protected int enemyHp;
     protected int maxHp;
     public bool isDead;
+    [SerializeField] private List<Transform> spawnPoints;
     private void Start()
     {
         maxHp = (int)slider.maxValue;
@@ -29,21 +30,20 @@ public class EnemyHP : MonoBehaviour, IEnemyDamageObserver
     {
         enemyHp -= damageAmount;
         slider.value=enemyHp;
-        if (enemyHp <= 0)
+        if (enemyHp <= 0 && !isDead)
         {
             isDead = true;
-        }
-        else
-        {
-            isDead = false;
+            RespawnAtRandomSpawnPoint(spawnPoints);
         }
     }
-    public void RespawnAtRandomSpawnPoint(List<Transform> spawnPoints)
+    public void RespawnAtRandomSpawnPoint(List<Transform>spawnPoints)
     {
-        int index = Random.Range(0, spawnPoints.Count);
-        transform.position = spawnPoints[index].position;
-        enemyHp = maxHp;
-        slider.value = maxHp;
-        isDead = false; 
+        if (isDead)
+        {
+            int index = Random.Range(0, spawnPoints.Count);
+            transform.position = spawnPoints[index].position;
+            enemyHp = maxHp;
+            slider.value = maxHp;
+        }
     }
 }

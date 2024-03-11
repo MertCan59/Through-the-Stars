@@ -10,6 +10,7 @@ public class EnemyAction : MonoBehaviour
     public float moveSpeed;
     public Transform[] targetPositions;
     public ComponentManager manager;
+    public EnemyHP EnemyHp;
     #endregion
 
     #region State
@@ -20,10 +21,11 @@ public class EnemyAction : MonoBehaviour
     #endregion
     void Start()
     {
+        EnemyHp = GetComponent<EnemyHP>();
         manager = GetComponent<ComponentManager>();
         EnemyActionSm=new StateMachine();
         EnemyMove = new EnemyMove(this,EnemyActionSm,manager,targetPositions,moveSpeed);
-        EnemyFire = new EnemyFire(this, EnemyActionSm,enemy1Pool,enemy2Pool,enemyType);
+        EnemyFire = new EnemyFire(this, EnemyActionSm,enemy1Pool,enemy2Pool,enemyType,EnemyHp);
         EnemyActionSm.StartState(EnemyMove);
     }
     private void Update()

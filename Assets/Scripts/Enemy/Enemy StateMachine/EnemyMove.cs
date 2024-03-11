@@ -16,7 +16,7 @@ public class EnemyMove : State
     public override void OnEnter()
     {
         base.OnEnter();
-        Debug.Log("Entered Move State");
+        componentManager.GetRigidbody().constraints = RigidbodyConstraints2D.FreezeRotation;
         GetRandomPointBetweenTargets();
     }
     public override void OnExit()
@@ -37,9 +37,8 @@ public class EnemyMove : State
     private void Move(Vector3 movePosition)
     {
         enemyDirection=(movePosition-componentManager.GetRigidbody().transform.position).normalized;
-
-        componentManager.GetRigidbody().MovePosition(componentManager.GetRigidbody().transform.position + enemyDirection * speed * Time.fixedDeltaTime);
-
+        componentManager.GetRigidbody().MovePosition(componentManager.GetRigidbody().transform.position + enemyDirection
+            * speed * Time.fixedDeltaTime);
         float distance = Vector3.Distance(componentManager.GetRigidbody().transform.position,movePosition);
         if (distance <= 0.2)
         {
