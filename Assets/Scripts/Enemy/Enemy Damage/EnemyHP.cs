@@ -2,12 +2,13 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class EnemyHP : MonoBehaviour, IEnemyDamageObserver
 {
     [SerializeField] [CanBeNull] protected Slider slider;
     protected int enemyHp;
     protected int maxHp;
-    public bool isDead;
+    [HideInInspector] public bool isDead;
     [SerializeField] private List<Transform> spawnPoints;
     private void Start()
     {

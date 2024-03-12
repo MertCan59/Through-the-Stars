@@ -45,5 +45,4 @@ public class EnemyMove : State
             EnemyStateMachine.ChangeState(EnemyAction.EnemyFire);
         }
     }
-
 }

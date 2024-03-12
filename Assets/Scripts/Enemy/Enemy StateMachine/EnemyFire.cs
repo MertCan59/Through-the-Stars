@@ -4,7 +4,7 @@ public class EnemyFire : State
 {
     private readonly Enemy1MissileObjectPool enemy1MissileObjectPool;
     private readonly Enemy2MissileObjectPool enemy2MissileObjectPool;
-    private EnemyHP enemyHp;
+    private readonly EnemyHP enemyHp;
 
     public EnemyFire(EnemyAction enemyAction, StateMachine stateMachine,
         Enemy1MissileObjectPool enemy1MissileObjectPool,
@@ -16,12 +16,10 @@ public class EnemyFire : State
         this.enemy2MissileObjectPool = enemy2MissileObjectPool;
         this.enemyHp = enemyHp;
     }
-
     private float fireInterval = 0.75f;
     private float lastFireTime;
-
+    
     #region main
-
     public override void OnEnter()
     {
         base.OnEnter();
@@ -50,17 +48,14 @@ public class EnemyFire : State
             SetCurrentState(); 
         }
     }
-
     #endregion
-
+    
     private enum FireState
     {
         OneMissile,
         TwoMissiles
     }
-
     private FireState fireState;
-
     private void LaunchOneMissile()
     {
         if (Time.time - lastFireTime > fireInterval)
@@ -69,7 +64,6 @@ public class EnemyFire : State
             lastFireTime = Time.time;
         }
     }
-
     private void LaunchTwoMissiles()
     {
         if (Time.time - lastFireTime > fireInterval)
@@ -78,7 +72,6 @@ public class EnemyFire : State
             lastFireTime = Time.time;
         }
     }
-
     private void LaunchMissileSingleEnemy()
     {
         if (Time.time - lastFireTime > fireInterval)
@@ -87,7 +80,6 @@ public class EnemyFire : State
             lastFireTime = Time.time;
         }
     }
-
     private void SetCurrentState()
     {
         switch (EnemyAction.enemyType)
@@ -104,7 +96,7 @@ public class EnemyFire : State
                 }
                 break;
             case EnemyAction.EnemyType.Type2:
-                LaunchMissileSingleEnemy();
+                LaunchMissileSingleEnemy(); 
                 break;
         }
     }
