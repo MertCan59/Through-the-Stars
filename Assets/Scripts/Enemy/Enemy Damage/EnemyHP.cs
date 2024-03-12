@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class EnemyHP : MonoBehaviour, IEnemyDamageObserver
 {
     [SerializeField] [CanBeNull] protected Slider slider;
@@ -25,9 +24,9 @@ public class EnemyHP : MonoBehaviour, IEnemyDamageObserver
     }
     public void OnDamageTaken()
     {
-        DamageTaken(51);
+        OnDamageTaken(51);
     }
-    private void DamageTaken(int damageAmount)
+    private void OnDamageTaken(int damageAmount)
     {
         enemyHp -= damageAmount;
         slider.value=enemyHp;
